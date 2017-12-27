@@ -1,0 +1,34 @@
+{
+  "name": "data-prefetch-link",
+  "version": "1.0.0",
+  "description": "Extends next.js <Link> to allow invoking getInitialProps when prefetching a page",
+  "main": "lib/link.js",
+  "scripts": {
+    "compile": "babel --presets=react,es2015 -d lib/ link.js",
+    "prepublish": "npm run compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scaleapi/data-prefetch-link.git"
+  },
+  "keywords": [
+    "nextjs",
+    "caching",
+    "prefetch",
+    "react"
+  ],
+  "author": "Scale",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scaleapi/data-prefetch-link/issues"
+  },
+  "homepage": "https://github.com/scaleapi/data-prefetch-link#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1"
+  },
+  "peerDependencies": {
+    "next": ">= 3.0.2"
+  }
+}
