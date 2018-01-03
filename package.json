@@ -2,10 +2,10 @@
   "name": "data-prefetch-link",
   "version": "1.0.1",
   "description": "Extends next.js <Link> to allow invoking getInitialProps when prefetching a page",
-  "main": "lib/link.js",
+  "main": "./dist/link.js",
   "scripts": {
-    "compile": "babel --presets=react,es2015 -d lib/ link.js",
-    "prepublish": "npm run compile"
+    "build": "babel src --presets=react,es2015 --out-dir dist",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
