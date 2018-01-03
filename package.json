@@ -1,6 +1,6 @@
 {
   "name": "data-prefetch-link",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Extends next.js <Link> to allow invoking getInitialProps when prefetching a page",
   "main": "./dist/link.js",
   "scripts": {

@@ -3,7 +3,7 @@ import { resolve, parse } from 'url';
 import Router from 'next/router';
 
 export default class DataPrefetchLink extends Link {
-  async prefetch() {
+  prefetch() {
     if (typeof window === 'undefined') {
       return;
     }
@@ -11,11 +11,12 @@ export default class DataPrefetchLink extends Link {
     const { pathname } = window.location;
     const href = resolve(pathname, this.props.href);
     const { query } = parse(this.props.href, true);
-    const Component = await Router.prefetch(href);
 
-    if (this.props.withData && Component) {
-      const ctx = {pathname: href, query, isVirtualCall: true};
-      await Component.getInitialProps(ctx);
-    }
+    return Router.prefetch(href).then(Component => {
+      if (this.props.withData && Component) {
+        const ctx = {pathname: href, query, isVirtualCall: true};
+        return Component.getInitialProps(ctx);
+      }
+    });
   }
 }
