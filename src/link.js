@@ -15,7 +15,7 @@ export default class DataPrefetchLink extends Link {
     return Router.prefetch(href).then(Component => {
       if (this.props.withData && Component) {
         const ctx = {pathname: href, query, isVirtualCall: true};
-        return Component.getInitialProps(ctx);
+        return Component.getInitialProps(ctx).then(() => Component);
       }
     });
   }
