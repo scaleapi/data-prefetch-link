@@ -11,7 +11,7 @@ export default class DataPrefetchLink extends Link {
     const { pathname } = window.location;
     const href = resolve(pathname, this.props.href);
     const { query } =
-      typeof this.props.href !== 'string' ? this.props.href : parse(url, true);
+      typeof this.props.href !== 'string' ? this.props.href : parse(this.props.href, true);
 
     return Router.prefetch(href).then(Component => {
       if (
