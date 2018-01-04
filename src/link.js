@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { resolve, parse } from 'url';
+import { resolve, parse, format } from 'url';
 import Router from 'next/router';
 
 export default class DataPrefetchLink extends Link {
@@ -9,9 +9,9 @@ export default class DataPrefetchLink extends Link {
     }
 
     const { pathname } = window.location;
-    const href = resolve(pathname, this.props.href);
-    const { query } =
-      typeof this.props.href !== 'string' ? this.props.href : parse(this.props.href, true);
+    const hrefString = this.props.href !== 'string' ? format(this.props.href) : this.props.href;
+    const href = resolve(pathname, hrefString);
+    const { query } = parse(href, true);
 
     return Router.prefetch(href).then(Component => {
       if (
