@@ -9,7 +9,7 @@ export default class DataPrefetchLink extends Link {
     }
 
     const { pathname } = window.location;
-    const hrefString = this.props.href !== 'string' ? format(this.props.href) : this.props.href;
+    const hrefString = typeof this.props.href !== 'string' ? format(this.props.href) : this.props.href;
     const href = resolve(pathname, hrefString);
     const { query } = parse(href, true);
 
