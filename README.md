@@ -26,3 +26,6 @@ A good use case might be high-level pages in the header navigation, in which the
 
 You probably wouldn't want to use it on large lists of links (e.g. grid with infinite scroll) as this would negatively affect performance — for both your users and the web server that's handling the requests.
 
+### Licence 
+MIT
+
