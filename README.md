@@ -1,7 +1,7 @@
 # data-prefetch-link
 Extends `<Link>` to allow invoking `getInitialProps` when prefetching a page. That way, if you use a caching layer in  `getInitialProps`, the page data will be already cached when you click the link, thus producing the same instantaneous navigation that is possible with prefetched static pages.
 
-This approach is explained in more detail in our blog post: [Increasing the Performance of Dynamic Next.js Websites](https://scale.ai/blog/performance-on-next-js-websites).
+This approach is explained in more detail in our blog post: [Increasing the Performance of Dynamic Next.js Websites](https://scale.com/blog/performance-on-next-js-websites).
 
 ## Installation
 ```sh
